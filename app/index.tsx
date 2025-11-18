@@ -5,13 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function Index() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          padding: 50,
-        }}
-      >
+      <View className="flex-1 flex-col p-5">
         <Text variant="titleLarge">Papyrus</Text>
       </View>
     </SafeAreaView>
