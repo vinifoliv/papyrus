@@ -1,10 +1,17 @@
 import { View } from "react-native";
-import { Text } from "react-native-paper";
+import { Text, useTheme } from "react-native-paper";
 
 export default function SettingsScreen() {
+  const theme = useTheme();
+
   return (
-    <View>
-      <Text variant="bodyLarge">Bem-vindo às configurações.</Text>
+    <View
+      className="flex-1 flex-col p-20"
+      style={{ backgroundColor: theme.colors.background }}
+    >
+      <Text variant="titleLarge" style={{ color: theme.colors.primary }}>
+        Settings
+      </Text>
     </View>
   );
 }

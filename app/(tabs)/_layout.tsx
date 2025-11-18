@@ -1,7 +1,9 @@
 import { Tabs } from "expo-router";
-import { Icon } from "react-native-paper";
+import { Icon, useTheme } from "react-native-paper";
 
 export default function TabLayout() {
+  const theme = useTheme();
+
   return (
     <Tabs>
       <Tabs.Screen
@@ -9,6 +11,9 @@ export default function TabLayout() {
         options={{
           headerShown: false,
           title: "Home",
+          tabBarActiveTintColor: theme.colors.primary,
+          tabBarInactiveTintColor: theme.colors.outline,
+          tabBarStyle: { backgroundColor: theme.colors.surface },
           tabBarIcon: ({ color, size }) => (
             <Icon source="home" size={size} color={color} />
           ),
@@ -17,7 +22,11 @@ export default function TabLayout() {
       <Tabs.Screen
         name="settings"
         options={{
+          headerShown: false,
           title: "Settings",
+          tabBarActiveTintColor: theme.colors.primary,
+          tabBarInactiveTintColor: theme.colors.outline,
+          tabBarStyle: { backgroundColor: theme.colors.surface },
           tabBarIcon: ({ color, size }) => (
             <Icon source="cog" size={size} color={color} />
           ),

@@ -1,13 +1,17 @@
 import { View } from "react-native";
-import { Text } from "react-native-paper";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Text, useTheme } from "react-native-paper";
 
 export default function Index() {
+  const theme = useTheme();
+
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View className="flex-1 flex-col p-20">
-        <Text variant="titleLarge">Papyrus</Text>
-      </View>
-    </SafeAreaView>
+    <View
+      className="flex-1 flex-col p-20"
+      style={{ backgroundColor: theme.colors.background }}
+    >
+      <Text variant="titleLarge" style={{ color: theme.colors.primary }}>
+        Papyrus
+      </Text>
+    </View>
   );
 }
