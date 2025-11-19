@@ -17,7 +17,7 @@ export default function Index() {
     const file = await selectFile();
     if (file) {
       setSelectedFile(file);
-      setHistory([...history, file]);
+      setHistory([file, ...history]);
     }
   };
 
