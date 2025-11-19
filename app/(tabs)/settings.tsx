@@ -1,17 +1,19 @@
+import ScreenTitle from "@/components/ScreenTitle";
 import { View } from "react-native";
-import { Text, useTheme } from "react-native-paper";
+import { useTheme } from "react-native-paper";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function SettingsScreen() {
+export default function Settings() {
   const theme = useTheme();
 
   return (
-    <View
-      className="flex-1 flex-col p-20"
+    <SafeAreaView
+      className="flex-1"
       style={{ backgroundColor: theme.colors.background }}
     >
-      <Text variant="titleLarge" style={{ color: theme.colors.primary }}>
-        Settings
-      </Text>
-    </View>
+      <View className="flex-1 flex-col p-5">
+        <ScreenTitle>Settings</ScreenTitle>
+      </View>
+    </SafeAreaView>
   );
 }

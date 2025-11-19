@@ -1,17 +1,38 @@
+import ScreenTitle from "@/components/ScreenTitle";
 import { View } from "react-native";
-import { Text, useTheme } from "react-native-paper";
+import { IconButton, Text, useTheme } from "react-native-paper";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
   const theme = useTheme();
 
   return (
-    <View
-      className="flex-1 flex-col p-20"
+    <SafeAreaView
+      className="flex-1 relative"
       style={{ backgroundColor: theme.colors.background }}
     >
-      <Text variant="titleLarge" style={{ color: theme.colors.primary }}>
-        Papyrus
-      </Text>
-    </View>
+      <View className="flex-1 flex-col p-5 gap-5">
+        <ScreenTitle>Papyrus</ScreenTitle>
+
+        <View className="flex-1 py-5">
+          <Text
+            variant="headlineSmall"
+            style={{ color: theme.colors.onBackground }}
+          >
+            History
+          </Text>
+        </View>
+
+        <View className="w-full absolute bottom-0 flex items-center">
+          <IconButton
+            className="size-20 z-10 rounded-full"
+            icon="file-document"
+            iconColor={theme.colors.onPrimary}
+            size={50}
+            style={{ backgroundColor: theme.colors.primary }}
+          />
+        </View>
+      </View>
+    </SafeAreaView>
   );
 }
