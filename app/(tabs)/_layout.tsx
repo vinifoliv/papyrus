@@ -26,7 +26,7 @@ export default function TabLayout() {
           title: "Read",
           tabBarActiveTintColor: theme.colors.primary,
           tabBarInactiveTintColor: theme.colors.outline,
-          tabBarStyle: { backgroundColor: theme.colors.surface },
+          tabBarStyle: { display: "none" },
           tabBarIcon: ({ color, size }) => (
             <Icon source="file-document" size={size} color={color} />
           ),
