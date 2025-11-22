@@ -1,25 +1,12 @@
 import ScreenTitle from "@/components/ScreenTitle";
 import { ThemedAreaView } from "@/components/ThemedAreaView";
-import { useDocumentPicker } from "@/hooks/useDocumentPicker";
-import { File } from "@/interfaces/File";
-import { useState } from "react";
+import { useHistory } from "@/hooks/useHistory";
 import { ScrollView, View } from "react-native";
-import { IconButton, Text, useTheme } from "react-native-paper";
+import { Text, useTheme } from "react-native-paper";
 
 export default function Index() {
   const theme = useTheme();
-  const { selectFile } = useDocumentPicker();
-
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [history, setHistory] = useState<File[]>([]);
-
-  const handleSelectDocument = async () => {
-    const file = await selectFile();
-    if (file) {
-      setSelectedFile(file);
-      setHistory([file, ...history]);
-    }
-  };
+  const { history } = useHistory();
 
   return (
     <ThemedAreaView>
@@ -36,9 +23,9 @@ export default function Index() {
           </Text>
           <ScrollView className="flex-1" contentContainerStyle={{ gap: 5 }}>
             {history.length > 0 ? (
-              history.map((item) => (
+              history.map((item, index) => (
                 <View
-                  key={item.uri}
+                  key={`${index}-${item.uri}`}
                   className="p-5 rounded-lg"
                   style={{ backgroundColor: theme.colors.surface }}
                 >
