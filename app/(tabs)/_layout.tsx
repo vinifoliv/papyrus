@@ -20,6 +20,19 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="reader"
+        options={{
+          headerShown: false,
+          title: "Read",
+          tabBarActiveTintColor: theme.colors.primary,
+          tabBarInactiveTintColor: theme.colors.outline,
+          tabBarStyle: { backgroundColor: theme.colors.surface },
+          tabBarIcon: ({ color, size }) => (
+            <Icon source="file-document" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="settings"
         options={{
           headerShown: false,
