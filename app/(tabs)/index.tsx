@@ -3,6 +3,7 @@ import { ThemedAreaView } from "@/components/ThemedAreaView";
 import { useHistory } from "@/hooks/useHistory";
 import { useSelectedFile } from "@/hooks/useSelectedFile";
 import { File } from "@/interfaces/File";
+import { router } from "expo-router";
 import { ScrollView, TouchableOpacity, View } from "react-native";
 import { Text, useTheme } from "react-native-paper";
 
@@ -14,6 +15,7 @@ export default function Index() {
 
   const handleSelectFile = (file: File) => {
     setSelectedFile(file);
+    router.push("/(tabs)/reader");
   };
 
   return (
