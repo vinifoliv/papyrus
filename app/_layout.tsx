@@ -7,6 +7,7 @@ import { Poppins_700Bold } from "@expo-google-fonts/poppins";
 import { Roboto_400Regular, Roboto_500Medium } from "@expo-google-fonts/roboto";
 import { ThemeProvider } from "@/hooks/useThemeContext";
 import { HistoryProvider } from "@/hooks/useHistory";
+import { SelectedFileProvider } from "@/hooks/useSelectedFile";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -24,9 +25,11 @@ export default function RootLayout() {
   return (
     <ThemeProvider>
       <HistoryProvider>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        </Stack>
+        <SelectedFileProvider>
+          <Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          </Stack>
+        </SelectedFileProvider>
       </HistoryProvider>
     </ThemeProvider>
   );
