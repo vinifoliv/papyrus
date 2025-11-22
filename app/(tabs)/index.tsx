@@ -55,17 +55,6 @@ export default function Index() {
             )}
           </ScrollView>
         </View>
-
-        <View className="w-full absolute bottom-0 flex items-center">
-          <IconButton
-            className="size-20 z-10 rounded-full"
-            icon="file-document"
-            iconColor={theme.colors.onPrimary}
-            size={50}
-            style={{ backgroundColor: theme.colors.primary }}
-            onPress={async () => await handleSelectDocument()}
-          />
-        </View>
       </View>
     </ThemedAreaView>
   );
