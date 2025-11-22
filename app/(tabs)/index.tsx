@@ -1,10 +1,10 @@
 import ScreenTitle from "@/components/ScreenTitle";
+import { ThemedAreaView } from "@/components/ThemedAreaView";
 import { useDocumentPicker } from "@/hooks/useDocumentPicker";
 import { File } from "@/interfaces/File";
 import { useState } from "react";
 import { ScrollView, View } from "react-native";
 import { IconButton, Text, useTheme } from "react-native-paper";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
   const theme = useTheme();
@@ -22,10 +22,7 @@ export default function Index() {
   };
 
   return (
-    <SafeAreaView
-      className="flex-1 relative"
-      style={{ backgroundColor: theme.colors.background }}
-    >
+    <ThemedAreaView>
       <View className="flex-1 flex-col p-5 gap-5">
         <ScreenTitle>Papyrus</ScreenTitle>
 
@@ -70,6 +67,6 @@ export default function Index() {
           />
         </View>
       </View>
-    </SafeAreaView>
+    </ThemedAreaView>
   );
 }
